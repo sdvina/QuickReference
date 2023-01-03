@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">QuickReference</string>
+    <string name="app_title">Quick Reference</string>
+
+    <string name="cd_search">Search</string>
+    <string name="cd_share">Share</string>
+    <string name="cd_translate">Translate</string>
+    <string name="cd_github">Github</string>
+    <string name="cd_more_actions">More Actions</string>
+
+    <string name="msg_coming_soon">Coming Soon</string>
+</resources>
