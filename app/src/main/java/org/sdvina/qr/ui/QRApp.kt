@@ -5,14 +5,18 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
 import org.sdvina.qr.ui.reference.ReferenceScreen
+import org.sdvina.qr.ui.reference.ReferenceViewModel
 import org.sdvina.qr.ui.theme.AppTheme
 
 @Composable
 fun QRApp() {
     AppTheme {
         Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-            ReferenceScreen()
+            ReferenceScreen(
+                viewModel = viewModel(factory = ReferenceViewModel.provideFactory())
+            )
         }
     }
 }
