@@ -2,7 +2,7 @@ package org.sdvina.qr.data.local
 
 import android.content.Context
 import android.content.SharedPreferences
-import org.sdvina.qr.ui.util.ReferenceUrl
+import org.sdvina.qr.data.constant.ReferenceConstant
 
 object AppPreferences {
     private lateinit var prefs: SharedPreferences
@@ -23,6 +23,6 @@ object AppPreferences {
     }
 
     var lastViewedUrl: String?
-        get() = prefs.getString(LAST_VIEWED_URL, ReferenceUrl.QR_EN)
+        get() = prefs.getString(LAST_VIEWED_URL, ReferenceConstant.QR_EN)
         set(value) = prefs.edit { it.putString(LAST_VIEWED_URL, value) }
 }

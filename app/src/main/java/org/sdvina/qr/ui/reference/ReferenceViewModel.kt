@@ -1,6 +1,8 @@
 package org.sdvina.qr.ui.reference
 
+import android.util.Log
 import androidx.annotation.StringRes
+import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import kotlinx.coroutines.flow.MutableStateFlow

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QuickReference</string>
+    <string name="app_title">技術速查</string>
+    <string name="cd_search">檢索</string>
+    <string name="cd_share">分享</string>
+    <string name="cd_translate">語言</string>
+    <string name="cd_github">Github</string>
+    <string name="cd_more_actions">更多操作</string>
+    <string name="msg_coming_soon">即將實現</string>
+    <string name="msg_error_code">錯誤代碼： %d</string>
+    <string name="error_time_out">超時，錯誤代碼： %d</string>
+    <string name="error_other_error">其它錯誤，錯誤代碼： %d</string>
+</resources>
