@@ -13,6 +13,8 @@
 | ---------- | -----------|------------|
 |![](https://img.shields.io/badge/license-MIT-green)|![](https://img.shields.io/badge/Author-JayHsu-blue.svg)|![](https://img.shields.io/github/v/release/sdvina/QuickReference?include_prereleases )|
 
+</h4>
+
 | English Version| 中文版本 |
 | --------------- | --------------- |
 | ![image](https://github.com/sdvina/QuickReference/blob/main/app/src/main/assets/qr_en.jpg) | ![image](https://github.com/sdvina/QuickReference/blob/main/app/src/main/assets/qr_zh.jpg) |
