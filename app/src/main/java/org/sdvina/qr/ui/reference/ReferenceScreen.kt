@@ -4,10 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
-import android.os.Build
 import android.util.Log
 import android.webkit.*
-import androidx.annotation.RequiresApi
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -23,7 +21,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.accompanist.web.*
@@ -35,12 +32,9 @@ import org.sdvina.qr.data.local.AppPreferences
 import org.sdvina.qr.ui.theme.AppTheme
 import org.sdvina.qr.ui.theme.Blue500
 import org.sdvina.qr.ui.util.Interceptor
-import java.io.ByteArrayInputStream
-import java.io.InputStream
-
 
 @SuppressLint("SetJavaScriptEnabled")
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalLifecycleComposeApi::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ReferenceScreen(
     modifier: Modifier = Modifier,
