@@ -98,10 +98,11 @@ fun ReferenceScreen(
                     super.onPageFinished(view, url)
                     if(searchState.value){
                         searchState.value = !searchState.value
-                        when(urlState.value.contains(ReferenceConstant.QR_ZH)) {
-                            true -> view.loadUrl(ReferenceConstant.QR_ZH_SEARCH)
-                            false -> view.loadUrl(ReferenceConstant.QR_EN_SEARCH)
+                        val openSearch = when(urlState.value.contains(ReferenceConstant.QR_ZH)) {
+                            true -> ReferenceConstant.QR_ZH_SEARCH
+                            false -> ReferenceConstant.QR_EN_SEARCH
                         }
+                        view.loadUrl(openSearch)
                     }
                 }
             }
