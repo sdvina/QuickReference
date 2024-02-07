@@ -23,18 +23,20 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.google.accompanist.web.*
 import org.sdvina.qr.R
 import org.sdvina.qr.data.constant.InterceptionConstant
 import org.sdvina.qr.data.constant.LogConstant
 import org.sdvina.qr.data.constant.ReferenceConstant
 import org.sdvina.qr.data.local.AppPreferences
+import org.sdvina.qr.ui.component.webview.AccompanistWebViewClient
+import org.sdvina.qr.ui.component.webview.CustomWebView
+import org.sdvina.qr.ui.component.webview.rememberWebViewNavigator
+import org.sdvina.qr.ui.component.webview.rememberWebViewState
 import org.sdvina.qr.ui.theme.AppTheme
 import org.sdvina.qr.ui.theme.Blue500
 import org.sdvina.qr.ui.util.Interceptor
 
 @SuppressLint("SetJavaScriptEnabled")
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ReferenceScreen(
     modifier: Modifier = Modifier,
@@ -59,7 +61,7 @@ fun ReferenceScreen(
             object : AccompanistWebViewClient() {
 
                 override fun onPageStarted(
-                    view: WebView?,
+                    view: WebView,
                     url: String?,
                     favicon: Bitmap?
                 ) {
@@ -70,7 +72,7 @@ fun ReferenceScreen(
                 }
 
                 override fun onReceivedError(
-                    view: WebView?,
+                    view: WebView,
                     request: WebResourceRequest?,
                     error: WebResourceError?
                 ) {
@@ -92,19 +94,19 @@ fun ReferenceScreen(
                     return super.shouldInterceptRequest(view, request)
                 }
 
-                override fun onPageFinished(view: WebView?, url: String?) {
+                override fun onPageFinished(view: WebView, url: String?) {
                     super.onPageFinished(view, url)
                     if(searchState.value){
                         searchState.value = !searchState.value
                         when(urlState.value.contains(ReferenceConstant.QR_ZH)) {
-                            true -> view?.loadUrl(ReferenceConstant.QR_ZH_SEARCH)
-                            false -> view?.loadUrl(ReferenceConstant.QR_EN_SEARCH)
+                            true -> view.loadUrl(ReferenceConstant.QR_ZH_SEARCH)
+                            false -> view.loadUrl(ReferenceConstant.QR_EN_SEARCH)
                         }
                     }
                 }
             }
         }
-        WebView(
+        CustomWebView(
             state = webViewState,
             modifier = modifier.padding(innerPadding),
             navigator = rememberWebViewNavigator(),

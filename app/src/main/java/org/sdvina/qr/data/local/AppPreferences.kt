@@ -23,6 +23,6 @@ object AppPreferences {
     }
 
     var lastViewedUrl: String?
-        get() = prefs.getString(LAST_VIEWED_URL, ReferenceConstant.QR_EN)
+        get() = prefs.getString(LAST_VIEWED_URL, ReferenceConstant.QR_ZH)
         set(value) = prefs.edit { it.putString(LAST_VIEWED_URL, value) }
 }

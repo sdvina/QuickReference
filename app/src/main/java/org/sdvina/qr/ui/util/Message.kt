@@ -15,9 +15,7 @@ data class Message(
 
         if (id != other.id) return false
         if (messageId != other.messageId) return false
-        if (!formatArgs.contentEquals(other.formatArgs)) return false
-
-        return true
+        return formatArgs.contentEquals(other.formatArgs)
     }
 
     override fun hashCode(): Int {
